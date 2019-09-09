@@ -17,17 +17,16 @@ Criada uma aplicação em express, para armazenar projetos e suas tarefas.
 ![Desafio 01.]
 
 - [x] - `POST /projects/:id/tasks`: A rota deve receber um campo `title` e armazenar uma nova tarefa no array de tarefas de um projeto específico escolhido através do `id` presente nos parâmetros da rota;
-![Desafio 01.]
 
 
 
 ## Middlewares
 
 - [x] - Crie um middleware que será utilizado em todas rotas que recebem o ID do projeto nos parâmetros da URL que verifica se o projeto com aquele ID existe. Se não existir retorne um erro, caso contrário permita a requisição continuar normalmente;
-![Desafio 01.]
+
 
 - [x] - Crie um middleware global chamado em todas requisições que imprime (`console.log`) uma contagem de quantas requisições foram feitas na aplicação até então;
-![Desafio 01.]
+
 
 “Sua única limitação é você mesmo”!
 
