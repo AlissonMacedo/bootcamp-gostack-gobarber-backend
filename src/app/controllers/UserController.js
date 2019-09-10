@@ -39,7 +39,7 @@ class UserController {
         .when('oldPassword', (oldPassword, field) =>
           oldPassword ? field.required() : field
         ),
-      confirmPassword: Yup.string().when('password', (password, field) =>
+      confirmPassword: Yup.string(6).when('password', (password, field) =>
         password ? field.required().oneOf([Yup.ref('password')]) : field
       ),
     });
@@ -53,7 +53,9 @@ class UserController {
     const user = await User.findByPk(req.userId);
 
     if (email !== user.email) {
-      const userExists = await User.findOne({ where: { email } });
+      const userExists = await User.findOne({
+        where: { email },
+      });
 
       if (userExists) {
         return res.status(400).json({ error: 'User already exists.' });
@@ -76,12 +78,7 @@ class UserController {
       ],
     });
 
-    return res.json({
-      id,
-      name,
-      email,
-      avatar,
-    });
+    return res.json({ id, name, email, avatar });
   }
 }
 
