@@ -17,11 +17,10 @@ const routes = new Router();
 const upload = multer(multerConfig);
 
 routes.post('/users', UserController.store);
-routes.post('/sessions', SessionController.store);
+routes.put('/users', UserController.update);
 
 routes.use(authMiddleware);
-
-routes.put('/users', UserController.update);
+routes.post('/sessions', SessionController.store);
 
 routes.get('/providers', ProviderController.index);
 routes.get('/providers/:providerId/available', AvailableController.index);
