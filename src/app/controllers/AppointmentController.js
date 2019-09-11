@@ -97,7 +97,7 @@ class AppointmentController {
 
     /**
      * Notify appointment provider
-     */
+
     const user = await User.findByPk(req.userId);
     const formattedDate = format(
       hourStart,
@@ -109,7 +109,7 @@ class AppointmentController {
       content: `Novo agendamento de ${user.name} para ${formattedDate}`,
       user: provider_id,
     });
-
+*/
     return res.json(appointment);
   }
 
